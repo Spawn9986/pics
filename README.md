@@ -14,3 +14,4 @@
 Technologies used in the project:
 
 *   React.js
+*   Axios
