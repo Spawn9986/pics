@@ -3,8 +3,10 @@ import searchImages from './api';
 
 function App() {
     //defined a callback (handleSubmit) in the parent (App.js)
-    const handleSubmit = (term) => {
-        searchImages(term);
+    const handleSubmit = async (term) => {
+        const result = await searchImages(term);
+
+        console.log(result);
     };
 
     return <div>
