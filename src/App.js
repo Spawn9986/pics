@@ -1,12 +1,16 @@
+import { useState } from 'react';
 import SearchBar from './components/SearchBar';
+import ImageList from './components/ImageList';
 import searchImages from './api';
 
 function App() {
+    const [images, setImages] = useState([]);
+
     //defined a callback (handleSubmit) in the parent (App.js)
     const handleSubmit = async (term) => {
         const result = await searchImages(term);
 
-        console.log(result);
+        setImages(result);
     };
 
     return <div>
@@ -19,7 +23,8 @@ function App() {
         the user enters into the search bar as a search request. The data will
         eventually show back up in the parent (App.js). We defined SearchBar above
         and now we will render it through < /> */}
-        <SearchBar onSubmit={handleSubmit}/> 
+        <SearchBar onSubmit={handleSubmit} /> 
+        <ImageList images={images} />
     </div>
 }
 
