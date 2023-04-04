@@ -1,9 +1,10 @@
 import SearchBar from './components/SearchBar';
+import searchImages from './api';
 
 function App() {
     //defined a callback (handleSubmit) in the parent (App.js)
     const handleSubmit = (term) => {
-        console.log('Do a search with', term);
+        searchImages(term);
     };
 
     return <div>
